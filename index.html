@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>· রজতজয়ন্তী বর্ষ উদযাপন</title>
+  <meta name="description" content="সৃজনী কলা অ্যাকাডেমী’র রজতজয়ন্তী বর্ষ উদযাপন — শ্রীমতী ব্রততী বন্দ্যোপাধ্যায়ের একক আবৃত্তি সন্ধ্যা ও দুই দিনব্যাপী বিশেষ কর্মশালা, রায়গঞ্জ, উত্তর দিনাজপুর।">
+  <meta name="theme-color" content="#0c0922">
+  <meta property="og:title" content="· রজতজয়ন্তী বর্ষ উদযাপন">
+  <meta property="og:description" content="একক আবৃত্তি সন্ধ্যা ও দুই দিনব্যাপী বিশেষ কর্মশালা — শ্রীমতী ব্রততী বন্দ্যোপাধ্যায়।">
+  <meta property="og:image" content="assets/poster.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Fonts: Anek Bangla (display), Noto Serif Bengali (editorial serif), Hind Siliguri (body), Cormorant Garamond (English accents) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wdth,wght@75..125,300..800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@400..900&display=swap" rel="stylesheet">
+
+  <link rel="preload" as="image" href="assets/artist.jpg">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Animation libraries (deferred, executed in order) -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">মূল বিষয়বস্তুতে যান</a>
+
+  <!-- ============ SVG SPRITE ============ -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="logo" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" stroke-width="1.4" opacity=".55"/>
+        <polygon fill="currentColor" points="50,2 53.1,42.6 69.8,30.2 57.4,46.9 98,50 57.4,53.1 69.8,69.8 53.1,57.4 50,98 46.9,57.4 30.2,69.8 42.6,53.1 2,50 42.6,46.9 30.2,30.2 46.9,42.6"/>
+      </symbol>
+      <symbol id="i-cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M8 3v4M16 3v4M3.5 10h17"/></g></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></g></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></g></symbol>
+      <symbol id="i-ticket" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5V6.5a1.5 1.5 0 0 1 1.5-1.5h14a1.5 1.5 0 0 1 1.5 1.5v2a3.5 3.5 0 0 0 0 7v2a1.5 1.5 0 0 1-1.5 1.5H5a1.5 1.5 0 0 1-1.5-1.5v-2a3.5 3.5 0 0 0 0-7z"/><path d="M14 5v14" stroke-dasharray="2 2.5"/></g></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M6.6 3.5h2.6l1.4 4-2 1.4a11 11 0 0 0 6.5 6.5l1.4-2 4 1.4v2.6a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2z"/></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="9" cy="8.5" r="3.2"/><path d="M3.5 19.5a5.5 5.5 0 0 1 11 0"/><path d="M15.5 5.6a3.2 3.2 0 0 1 0 6M17 14.2a5.5 5.5 0 0 1 3.5 5.3"/></g></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol>
+      <symbol id="i-arrow-ur" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M8.5 7H17v8.5"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></symbol>
+      <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"/></g></symbol>
+      <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M13.4 21v-7.4h2.5l.4-2.9h-2.9V8.9c0-.8.2-1.4 1.4-1.4h1.6V4.9a21 21 0 0 0-2.3-.1c-2.3 0-3.8 1.4-3.8 3.9v2.1H7.7v2.9h2.6V21z"/></symbol>
+      <symbol id="i-yt" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="2.8" y="5.5" width="18.4" height="13" rx="4"/><path d="M10.2 9.3v5.4l4.6-2.7z" fill="currentColor"/></g></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="8.5" y="8.5" width="11" height="11" rx="2.5"/><path d="M15.5 8.5V6a1.5 1.5 0 0 0-1.5-1.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5"/></g></symbol>
+      <path id="circlePath" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/>
+    </defs>
+  </svg>
+
+  <!-- ============ LOADER ============ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <svg class="loader__logo"><use href="#logo"/></svg>
+      <div class="loader__count"><span id="loaderNum">০</span></div>
+      <p class="loader__label">রজতজয়ন্তী বর্ষ উদযাপন</p>
+      <div class="loader__bar"><span id="loaderBar"></span></div>
+    </div>
+  </div>
+
+  <!-- ============ GLOBAL UI ============ -->
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor__ring"><span class="cursor__label">দেখুন</span></div>
+    <div class="cursor__dot"></div>
+  </div>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="nav" id="nav">
+    <div class="nav__bar container">
+      <a href="#top" class="nav__brand" aria-label="সৃজনী কলা অ্যাকাডেমী — শুরুতে ফিরে যান">
+        <svg class="nav__logo" aria-hidden="true"><use href="#logo"/></svg>
+        <span class="nav__brand-text"><b>সৃজনী</b><small>কলা অ্যাকাডেমী</small></span>
+      </a>
+
+      <nav class="nav__links" aria-label="প্রধান নেভিগেশন">
+        <a href="#jubilee" data-nav="jubilee">রজতজয়ন্তী</a>
+        <a href="#artist" data-nav="artist">শিল্পী</a>
+        <a href="#workshop" data-nav="workshop">কর্মশালা</a>
+        <a href="#collaborators" data-nav="collaborators">সহযোগী</a>
+        <a href="#invitation" data-nav="invitation">আমন্ত্রণ</a>
+        <a href="#details" data-nav="details">তথ্য</a>
+      </nav>
+
+      <div class="nav__right">
+        <div class="nav__social">
+          <a href="#" data-social="instagram" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
+          <a href="#" data-social="facebook" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a>
+          <a href="#" data-social="youtube" aria-label="YouTube"><svg><use href="#i-yt"/></svg></a>
+        </div>
+        <a class="btn btn--outline btn--sm nav__cta" href="https://forms.gle/qnZxWaQXEPM2F6mN9" target="_blank" rel="noopener noreferrer" data-magnetic>নাম নথিভুক্ত করুন</a>
+        <button class="nav__burger" id="burger" type="button" aria-label="মেনু খুলুন" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mmenu" id="mobileMenu" aria-hidden="true" inert>
+    <div class="mmenu__glow" aria-hidden="true"></div>
+    <nav class="mmenu__links container" aria-label="মোবাইল নেভিগেশন">
+      <a href="#jubilee" style="--i:0"><span class="en">01</span>রজতজয়ন্তী</a>
+      <a href="#artist" style="--i:1"><span class="en">02</span>শিল্পী</a>
+      <a href="#workshop" style="--i:2"><span class="en">03</span>কর্মশালা</a>
+      <a href="#collaborators" style="--i:3"><span class="en">04</span>সহযোগী</a>
+      <a href="#invitation" style="--i:4"><span class="en">05</span>আমন্ত্রণ</a>
+      <a href="#details" style="--i:5"><span class="en">06</span>তথ্য</a>
+    </nav>
+    <div class="mmenu__foot container" style="--i:6">
+      <a class="btn btn--gold" href="https://forms.gle/qnZxWaQXEPM2F6mN9" target="_blank" rel="noopener noreferrer" data-open-register>কর্মশালায় অংশগ্রহণ করুন</a>
+      <div class="mmenu__social">
+        <a href="#" data-social="instagram" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
+        <a href="#" data-social="facebook" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a>
+        <a href="#" data-social="youtube" aria-label="YouTube"><svg><use href="#i-yt"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ 1. HERO ============ -->
+    <section class="hero" id="top" aria-labelledby="heroTitle">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__glow hero__glow--a"></div>
+        <div class="hero__glow hero__glow--b"></div>
+        <div class="hero__glow hero__glow--c"></div>
+        <span class="hero__ghost">২৫</span>
+        <div class="hero__rings"></div>
+      </div>
+      <div class="particles" data-particles="26" aria-hidden="true"></div>
+
+      <div class="hero__inner container">
+        <div class="hero__copy">
+          <p class="hero__eyebrow"><span class="en">A Silver Jubilee Celebration</span><span class="hero__eyebrow-dot">✦</span>রায়গঞ্জ</p>
+          <p class="hero__kicker" data-split="chars">শব্দে শব্দে অনুভূতি, আর সুরে সুরে প্রাণের স্পন্দন...!!!</p>
+          <h1 class="hero__title" id="heroTitle">
+            <span class="hero__title-line hero__title-line--light">সৃজনী কলা</span>
+            <span class="hero__title-line hero__title-line--bold">অ্যাকাডেমী</span>
+          </h1>
+          <p class="hero__subtitle">রজতজয়ন্তী বর্ষ উদযাপন</p>
+          <p class="hero__support">২৫ বছরের গৌরবময় পথচলা, সংস্কৃতি ও ভালোবাসার এক অনন্য উদযাপন।</p>
+          <div class="hero__ctas">
+            <a class="btn btn--gold" href="#details" data-magnetic>
+              <span>অনুষ্ঠানের বিস্তারিত</span>
+              <svg class="btn__icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="https://forms.gle/qnZxWaQXEPM2F6mN9" target="_blank" rel="noopener noreferrer" data-open-register data-magnetic>
+              <span>কর্মশালায় অংশগ্রহণ করুন</span>
+            </a>
+          </div>
+        </div>
+
+        <figure class="hero__art">
+          <div class="hero__spot" aria-hidden="true"></div>
+          <div class="hero__arch-line" aria-hidden="true"></div>
+          <div class="hero__reveal">
+            <div class="hero__frame">
+              <img src="assets/artist.jpg" width="378" height="520" alt="মঞ্চে মাইক্রোফোনের সামনে আবৃত্তিরত শ্রীমতী ব্রততী বন্দ্যোপাধ্যায়">
+            </div>
+          </div>
+          <svg class="hero__badge" viewBox="0 0 200 200" aria-hidden="true">
+            <circle cx="100" cy="100" r="98" fill="rgba(12,9,34,.55)" stroke="rgba(255,217,59,.35)"/>
+            <text class="hero__badge-text"><textPath href="#circlePath" textLength="482" lengthAdjust="spacing">SILVER JUBILEE ✦ TWENTY-FIVE YEARS ✦ </textPath></text>
+            <text x="100" y="118" text-anchor="middle" class="hero__badge-num">২৫</text>
+          </svg>
+          <figcaption class="hero__tag">
+            <small>প্রশিক্ষণে ও একক আবৃত্তিতে</small>
+            <strong>শ্রীমতী ব্রততী বন্দ্যোপাধ্যায়</strong>
+          </figcaption>
+        </figure>
+      </div>
+
+      <!-- Info dock (inspired by the reference's floating bottom bar) -->
+      <div class="hero__dock container" role="list">
+        <div class="chip" role="listitem">
+          <span class="chip__icon"><svg><use href="#i-ticket"/></svg></span>
+          <span><small>একক আবৃত্তি সন্ধ্যা</small><strong>২৬ ডিসেম্বর · সন্ধ্যা ৬টা</strong></span>
+        </div>
+        <div class="chip" role="listitem">
+          <span class="chip__icon"><svg><use href="#i-cal"/></svg></span>
+          <span><small>কর্মশালা</small><strong>২৬ ও ২৭ ডিসেম্বর, ২০২৬</strong></span>
+        </div>
+        <div class="chip" role="listitem">
+          <span class="chip__icon"><svg><use href="#i-pin"/></svg></span>
+          <span><small>স্থান</small><strong>রায়গঞ্জ, উত্তর দিনাজপুর</strong></span>
+        </div>
+        <div class="chip chip--accent" role="listitem">
+          <span class="chip__icon"><svg><use href="#i-clock"/></svg></span>
+          <span><small>নথিভুক্তির শেষ তারিখ</small><strong>১০ ডিসেম্বর, ২০২৬</strong></span>
+        </div>
+      </div>
+
+      <a href="#jubilee" class="scroll-cue" aria-label="নিচে স্ক্রল করুন">
+        <span class="en">Scroll</span><i></i>
+      </a>
+    </section>
+
+    <!-- ============ TAPES (marquee transition) ============ -->
+    <div class="tapes" aria-hidden="true">
+      <div class="tape tape--magenta">
+        <div class="tape__track">
+          <span>আবৃত্তি</span><b>✦</b><span>কর্মশালা</span><b>✦</b><span>একক আবৃত্তিসন্ধ্যা</span><b>✦</b><span>রজতজয়ন্তী</span><b>✦</b><span>২৫ বছর</span><b>✦</b><span>রায়গঞ্জ</span><b>✦</b>
+          <span>আবৃত্তি</span><b>✦</b><span>কর্মশালা</span><b>✦</b><span>একক আবৃত্তিসন্ধ্যা</span><b>✦</b><span>রজতজয়ন্তী</span><b>✦</b><span>২৫ বছর</span><b>✦</b><span>রায়গঞ্জ</span><b>✦</b>
+        </div>
+      </div>
+      <div class="tape tape--gold">
+        <div class="tape__track tape__track--rev">
+          <span>সৃজনী কলা অ্যাকাডেমী</span><b>✦</b><span>কাব্যকথা</span><b>✦</b><span>ঐকতান</span><b>✦</b><span>শব্দব্রহ্মের সাধনা</span><b>✦</b>
+          <span>সৃজনী কলা অ্যাকাডেমী</span><b>✦</b><span>কাব্যকথা</span><b>✦</b><span>ঐকতান</span><b>✦</b><span>শব্দব্রহ্মের সাধনা</span><b>✦</b>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 2. SILVER JUBILEE ============ -->
+    <section class="jubilee section--paper" id="jubilee" aria-labelledby="jubileeTitle">
+      <div class="jubilee__rings" aria-hidden="true"></div>
+      <div class="container jubilee__grid">
+        <div class="jubilee__num">
+          <span class="jubilee__count" data-count="25" aria-label="২৫">২৫</span>
+          <div class="jubilee__unit">
+            <span class="jubilee__unit-bn">বছর</span>
+            <span class="en">of verse, rhythm &amp; love</span>
+          </div>
+        </div>
+
+        <div class="jubilee__copy">
+          <p class="eyebrow"><span class="en">Chapter 01</span><i></i>রজতজয়ন্তী</p>
+          <h2 class="h-display" id="jubileeTitle" data-split="words">২৫ বছরের গৌরবময় পথচলা</h2>
+          <blockquote class="jubilee__quote" data-reveal>
+            <p>‘সৃজনী কলা অ্যাকাডেমী’র গৌরবময় ২৫ বছরের এই পথচলা আমাদের সংস্কৃতি ও ভালোবাসার এক অনন্য উদযাপিত অধ্যায়।</p>
+          </blockquote>
+          <ul class="jubilee__values" data-reveal>
+            <li>শব্দ</li><li>ছন্দ</li><li>সংস্কৃতি</li><li>ভালোবাসা</li>
+          </ul>
+        </div>
+
+        <div class="jubilee__media">
+          <button class="jubilee__poster" type="button" data-lightbox data-cursor="view" aria-label="অনুষ্ঠানের পোস্টার বড় করে দেখুন">
+            <img src="assets/poster.jpg" width="900" height="1200" loading="lazy" alt="রজতজয়ন্তী অনুষ্ঠানের পোস্টার">
+            <span class="jubilee__poster-tag">পোস্টার দেখুন <svg aria-hidden="true"><use href="#i-arrow-ur"/></svg></span>
+          </button>
+          <div class="jubilee__circle" aria-hidden="true">
+            <img src="assets/artist.jpg" loading="lazy" alt="">
+          </div>
+          <span class="jubilee__stamp en" aria-hidden="true">Silver<br>Jubilee</span>
+        </div>
+      </div>
+
+      <!-- Timeline-inspired visual: 25 ticks for 25 years -->
+      <div class="container timeline" aria-hidden="true">
+        <div class="timeline__labels"><span>০১</span><span class="en">a journey of twenty-five years</span><span>২৫</span></div>
+        <div class="timeline__track">
+          <div class="timeline__line"><span></span></div>
+          <div class="timeline__ticks" id="timelineTicks"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3. FEATURED ARTIST ============ -->
+    <section class="artist" id="artist" aria-labelledby="artistTitle">
+      <div class="artist__bigname" aria-hidden="true">ব্রততী ✦ ব্রততী ✦</div>
+      <div class="container artist__grid">
+        <figure class="artist__portrait" data-cursor="view">
+          <div class="artist__mask">
+            <div class="artist__mask-inner">
+              <img src="assets/artist.jpg" width="378" height="520" loading="lazy" alt="শ্রীমতী ব্রততী বন্দ্যোপাধ্যায়, মঞ্চে আবৃত্তিরত">
+            </div>
+          </div>
+          <figcaption class="artist__vert en">The Voice of Bengali Recitation</figcaption>
+        </figure>
+
+        <div class="artist__copy">
+          <p class="eyebrow eyebrow--dark"><span class="en">Chapter 02</span><i></i>বিশেষ আকর্ষণ</p>
+          <h2 class="artist__name" id="artistTitle">
+            <span class="artist__honor">শ্রীমতী</span>
+            <span class="artist__line"><span>ব্রততী</span></span>
+            <span class="artist__line artist__line--accent"><span>বন্দ্যোপাধ্যায়</span></span>
+          </h2>
+          <p class="artist__desc" data-reveal>বাংলা আবৃত্তির জাদুকরের একক আবৃত্তি সন্ধ্যা।</p>
+
+          <div class="evening" data-reveal>
+            <h3 class="evening__title">আবৃত্তি সন্ধ্যায় একক ব্রততী</h3>
+            <ul class="evening__meta">
+              <li><svg aria-hidden="true"><use href="#i-cal"/></svg><span><small>তারিখ</small>২৬ ডিসেম্বর, ২০২৬</span></li>
+              <li><svg aria-hidden="true"><use href="#i-clock"/></svg><span><small>সময়</small>সন্ধ্যা ৬টা</span></li>
+              <li><svg aria-hidden="true"><use href="#i-pin"/></svg><span><small>স্থান</small>বিধানমঞ্চ, রায়গঞ্জ, উত্তর দিনাজপুর</span></li>
+            </ul>
+            <div class="tickets">
+              <p class="tickets__label"><svg aria-hidden="true"><use href="#i-ticket"/></svg>প্রবেশমূল্য</p>
+              <ul class="tickets__list">
+                <li>৭০০/-</li><li>৫০০/-</li><li>৪০০/-</li><li>৩০০/-</li><li>২০০/-</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 4. WORKSHOP (horizontal storytelling on desktop) ============ -->
+    <section class="workshop" id="workshop" aria-labelledby="workshopTitle">
+      <div class="workshop__ghost" aria-hidden="true">কর্মশালা</div>
+      <div class="workshop__pin">
+        <div class="workshop__track">
+          <article class="ws-panel ws-intro">
+            <p class="eyebrow eyebrow--dark"><span class="en">Chapter 03</span><i></i>কর্মশালা</p>
+            <h2 class="ws-intro__title" id="workshopTitle" data-split="words">দুই দিনব্যাপী বিশেষ কর্মশালা</h2>
+            <p class="ws-intro__by">প্রশিক্ষণে <strong>শ্রীমতী ব্রততী বন্দ্যোপাধ্যায়</strong></p>
+            <p class="ws-intro__date"><svg aria-hidden="true"><use href="#i-cal"/></svg>২৬ ও ২৭ ডিসেম্বর, ২০২৬</p>
+            <p class="ws-intro__hint" aria-hidden="true"><span class="en">two categories · two days</span><svg><use href="#i-arrow"/></svg></p>
+          </article>
+
+          <article class="ws-card" data-tilt>
+            <div class="ws-card__top">
+              <span class="en ws-card__no">Category 01</span>
+              <span class="ws-card__age"><svg aria-hidden="true"><use href="#i-users"/></svg>বয়স: ৯ – ১৪ বছর পর্যন্ত</span>
+            </div>
+            <p class="ws-card__label">বিভাগ</p>
+            <h3 class="ws-card__name">আগামী</h3>
+            <ul class="schedule">
+              <li><span class="schedule__day"><b>২৬</b>ডিসেম্বর</span><span class="schedule__time">দুপুর ১টা থেকে বিকেল ৩টা</span></li>
+              <li><span class="schedule__day"><b>২৭</b>ডিসেম্বর</span><span class="schedule__time">সকাল ১০টা থেকে বেলা ১২টা</span></li>
+            </ul>
+            <a class="ws-card__cta" href="https://forms.gle/qnZxWaQXEPM2F6mN9" target="_blank" rel="noopener noreferrer" data-open-register>এই বিভাগে নাম নথিভুক্ত করুন <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+
+          <article class="ws-card ws-card--alt" data-tilt>
+            <div class="ws-card__top">
+              <span class="en ws-card__no">Category 02</span>
+              <span class="ws-card__age"><svg aria-hidden="true"><use href="#i-users"/></svg>বয়স: ১৪+ এবং তদূর্ধ্ব</span>
+            </div>
+            <p class="ws-card__label">বিভাগ</p>
+            <h3 class="ws-card__name">বোধন</h3>
+            <ul class="schedule">
+              <li><span class="schedule__day"><b>২৬</b>ডিসেম্বর</span><span class="schedule__time">সকাল ১০টা থেকে বেলা ১২টা</span></li>
+              <li><span class="schedule__day"><b>২৭</b>ডিসেম্বর</span><span class="schedule__time">দুপুর ১টা থেকে বিকেল ৩টা</span></li>
+            </ul>
+            <a class="ws-card__cta" href="https://forms.gle/qnZxWaQXEPM2F6mN9" target="_blank" rel="noopener noreferrer" data-open-register>এই বিভাগে নাম নথিভুক্ত করুন <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </article>
+
+          <article class="ws-panel ws-cta">
+            <svg class="ws-cta__stamp" viewBox="0 0 200 200" aria-hidden="true">
+              <circle cx="100" cy="100" r="96" fill="#fff"/>
+              <text class="ws-cta__stamp-text"><textPath href="#circlePath" textLength="482" lengthAdjust="spacing">LIMITED SEATS ✦ LIMITED SEATS ✦ </textPath></text>
+              <use href="#logo" x="70" y="70" width="60" height="60" class="ws-cta__stamp-logo"/>
+            </svg>
+            <p class="ws-cta__label">কর্মশালার প্রবেশমূল্য</p>
+            <p class="ws-cta__price">১২০০<span>/-</span></p>
+            <dl class="ws-cta__list">
+              <div><dt>নাম নথিভুক্তকরণের শেষ তারিখ</dt><dd>১০ ডিসেম্বর, ২০২৬</dd></div>
+              <div><dt>স্থান</dt><dd>বাণিজ্য ভবন, মোহনবাটি, রায়গঞ্জ, উত্তর দিনাজপুর</dd></div>
+              <div><dt>আসন</dt><dd>আসনসংখ্যা সীমিত</dd></div>
+            </dl>
+            <a class="btn btn--ink" href="https://forms.gle/qnZxWaQXEPM2F6mN9" target="_blank" rel="noopener noreferrer" data-open-register data-magnetic>
+              <span>কর্মশালায় অংশগ্রহণ করুন</span>
+              <svg class="btn__icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+          </article>
+        </div>
+        <div class="workshop__progress" aria-hidden="true"><span></span></div>
+      </div>
+    </section>
+
+    <!-- ============ 5. COLLABORATORS ============ -->
+    <section class="collab section--paper" id="collaborators" aria-labelledby="collabTitle">
+      <div class="container">
+        <header class="collab__head">
+          <p class="eyebrow eyebrow--center"><span class="en">Chapter 04</span><i></i>সহযোগিতায়</p>
+          <h2 class="h-display" id="collabTitle" data-split="words">সংস্থাত্রয়ীর ঐকান্তিক উদ্যোগে</h2>
+          <p class="collab__sub" data-reveal>কর্মশালা ও একক আবৃত্তিসন্ধ্যা</p>
+        </header>
+
+        <div class="collab__grid">
+          <!-- Replace each .org__logo monogram with an <img> of the organisation's logo when available -->
+          <article class="org org--host">
+            <div class="org__logo" data-logo-placeholder><span>স</span></div>
+            <p class="org__role"><span class="en">Host</span> · আয়োজক</p>
+            <h3 class="org__name">সৃজনী কলা অ্যাকাডেমী</h3>
+            <p class="org__badge en">25 Years of Anniversary</p>
+            <div class="org__person">
+              <img src="assets/gopal-saha.jpg" width="100" height="100" loading="lazy" alt="গোপাল সাহা">
+              <div><small>অধ্যক্ষ</small><strong>গোপাল সাহা</strong><a href="tel:+919832355689">৯৮৩২৩ ৫৫৬৮৯</a></div>
+            </div>
+          </article>
+
+          <article class="org">
+            <div class="org__logo" data-logo-placeholder><span>কা</span></div>
+            <p class="org__role"><span class="en">In collaboration</span> · সহযোগী সংস্থা</p>
+            <h3 class="org__name">কাব্যকথা</h3>
+            <p class="org__badge en">Kabyakatha</p>
+            <div class="org__person">
+              <img src="assets/arpita-bhattacharya.jpg" width="100" height="100" loading="lazy" alt="অর্পিতা ভট্টাচার্য">
+              <div><small>যোগাযোগ</small><strong>অর্পিতা ভট্টাচার্য</strong><a href="tel:+919775886233">৯৭৭৫৮ ৮৬২৩৩</a></div>
+            </div>
+          </article>
+
+          <article class="org">
+            <div class="org__logo" data-logo-placeholder><span>ঐ</span></div>
+            <p class="org__role"><span class="en">In collaboration</span> · সহযোগী সংস্থা</p>
+            <h3 class="org__name">ঐকতান</h3>
+            <p class="org__badge en">Oikotan</p>
+            <div class="org__person">
+              <img src="assets/kaushik-bandyopadhyay.jpg" width="100" height="100" loading="lazy" alt="কৌশিক বন্দ্যোপাধ্যায়">
+              <div><small>যোগাযোগ</small><strong>কৌশিক বন্দ্যোপাধ্যায়</strong><a href="tel:+919475310876">৯৪৭৫৩ ১০৮৭৬</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 6. INVITATION ============ -->
+    <section class="invite" id="invitation" aria-labelledby="inviteTitle">
+      <div class="particles" data-particles="18" aria-hidden="true"></div>
+      <div class="invite__rings" aria-hidden="true"></div>
+      <div class="container invite__inner">
+        <p class="eyebrow eyebrow--dark"><span class="en">Chapter 05</span><i></i><span id="inviteTitle">আমন্ত্রণ</span></p>
+        <span class="invite__mark en" aria-hidden="true">“</span>
+        <p class="invite__text" data-split="scrub">শব্দব্রহ্মের এই সাধনায় আপনাদের উপস্থিতি আমাদের আনন্দকে দ্বিগুণ করে তুলবে। ছন্দ আর আবৃত্তির মূর্ছনায় আমাদের সঙ্গে এই বিশেষ মুহূর্তটি ভাগ করে নিতে সমস্ত রায়গঞ্জ তথা উত্তর দিনাজপুরবাসীকে জানাই আন্তরিক সাদর আমন্ত্রণ।</p>
+        <p class="invite__call" data-split="words">আসুন, শিল্প-সংস্কৃতির এই মহা উৎসবে সকলে একসঙ্গে মেতে উঠি।</p>
+        <div class="invite__sign" data-reveal>
+          <i></i>
+          <p><strong>সকলের সাদর আমন্ত্রণ রইল</strong><span>সৃজনী কলা অ্যাকাডেমী · কাব্যকথা · ঐকতান</span></p>
+          <i></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 7. EVENT INFORMATION ============ -->
+    <section class="details" id="details" aria-labelledby="detailsTitle">
+      <div class="container">
+        <header class="details__top">
+          <div>
+            <p class="eyebrow eyebrow--dark"><span class="en">Chapter 06</span><i></i>অনুষ্ঠানের তথ্য</p>
+            <h2 class="h-display h-display--light" id="detailsTitle" data-split="words">এক নজরে সব তথ্য</h2>
+          </div>
+          <div class="countdown" id="countdown" aria-live="off">
+            <p class="countdown__label">আবৃত্তি সন্ধ্যা শুরু হতে বাকি</p>
+            <div class="countdown__boxes">
+              <div class="cd"><b data-cd="d">০০</b><small>দিন</small></div>
+              <div class="cd"><b data-cd="h">০০</b><small>ঘণ্টা</small></div>
+              <div class="cd"><b data-cd="m">০০</b><small>মিনিট</small></div>
+              <div class="cd"><b data-cd="s">০০</b><small>সেকেন্ড</small></div>
+            </div>
+          </div>
+        </header>
+
+        <div class="details__grid">
+          <div class="details__main">
+            <article class="info" data-reveal>
+              <h3 class="info__title"><span class="info__no en">i.</span>একক আবৃত্তি সন্ধ্যা <em>আবৃত্তি সন্ধ্যায় একক ব্রততী</em></h3>
+              <dl class="rows">
+                <div class="row"><dt>তারিখ</dt><dd>২৬ ডিসেম্বর, ২০২৬</dd></div>
+                <div class="row"><dt>সময়</dt><dd>সন্ধ্যা ৬টা</dd></div>
+                <div class="row"><dt>স্থান</dt><dd>বিধানমঞ্চ, রায়গঞ্জ, উত্তর দিনাজপুর</dd></div>
+                <div class="row"><dt>প্রবেশমূল্য</dt><dd>৭০০/-, ৫০০/-, ৪০০/-, ৩০০/-, ২০০/-</dd></div>
+                <div class="row"><dt>টিকিট</dt><dd class="is-placeholder">টিকিট প্রাপ্তিস্থান — শীঘ্রই জানানো হবে</dd></div>
+              </dl>
+            </article>
+
+            <article class="info" data-reveal>
+              <h3 class="info__title"><span class="info__no en">ii.</span>কর্মশালা <em>প্রশিক্ষণে শ্রীমতী ব্রততী বন্দ্যোপাধ্যায়</em></h3>
+              <dl class="rows">
+                <div class="row"><dt>তারিখ</dt><dd>২৬ ও ২৭ ডিসেম্বর, ২০২৬</dd></div>
+                <div class="row"><dt>স্থান</dt><dd>বাণিজ্য ভবন, মোহনবাটি, রায়গঞ্জ, উত্তর দিনাজপুর</dd></div>
+                <div class="row"><dt>আগামী <small>(৯ – ১৪ বছর)</small></dt><dd>২৬ ডিসেম্বর: দুপুর ১টা থেকে বিকেল ৩টা<br>২৭ ডিসেম্বর: সকাল ১০টা থেকে বেলা ১২টা</dd></div>
+                <div class="row"><dt>বোধন <small>(১৪+ এবং তদূর্ধ্ব)</small></dt><dd>২৬ ডিসেম্বর: সকাল ১০টা থেকে বেলা ১২টা<br>২৭ ডিসেম্বর: দুপুর ১টা থেকে বিকেল ৩টা</dd></div>
+                <div class="row"><dt>প্রবেশমূল্য</dt><dd>১২০০/-</dd></div>
+              </dl>
+            </article>
+          </div>
+
+          <aside class="details__side">
+            <div class="reg" data-reveal>
+              <p class="reg__kicker en">Registration</p>
+              <h3 class="reg__title">নাম নথিভুক্তকরণ</h3>
+              <ul class="reg__facts">
+                <li><span>শেষ তারিখ</span><b>১০ ডিসেম্বর, ২০২৬</b></li>
+                <li><span>কর্মশালার প্রবেশমূল্য</span><b>১২০০/-</b></li>
+                <li><span>আসন</span><b>আসনসংখ্যা সীমিত</b></li>
+              </ul>
+              <a class="btn btn--gold btn--block" href="https://forms.gle/qnZxWaQXEPM2F6mN9" target="_blank" rel="noopener noreferrer" data-open-register data-magnetic>
+                <span>কর্মশালায় অংশগ্রহণ করুন</span>
+                <svg class="btn__icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+              </a>
+            </div>
+
+            <div class="contacts" data-reveal>
+              <h3 class="contacts__title">যোগাযোগ</h3>
+              <a class="contact" href="tel:+919832355689">
+                <img src="assets/gopal-saha.jpg" width="100" height="100" loading="lazy" alt="">
+                <span><strong>গোপাল সাহা</strong><small>অধ্যক্ষ, সৃজনী কলা অ্যাকাডেমী</small></span>
+                <em>৯৮৩২৩ ৫৫৬৮৯</em>
+              </a>
+              <a class="contact" href="tel:+919775886233">
+                <img src="assets/arpita-bhattacharya.jpg" width="100" height="100" loading="lazy" alt="">
+                <span><strong>অর্পিতা ভট্টাচার্য</strong><small>কাব্যকথা</small></span>
+                <em>৯৭৭৫৮ ৮৬২৩৩</em>
+              </a>
+              <a class="contact" href="tel:+919475310876">
+                <img src="assets/kaushik-bandyopadhyay.jpg" width="100" height="100" loading="lazy" alt="">
+                <span><strong>কৌশিক বন্দ্যোপাধ্যায়</strong><small>ঐকতান</small></span>
+                <em>৯৪৭৫৩ ১০৮৭৬</em>
+              </a>
+            </div>
+
+            <button class="poster-thumb" type="button" data-lightbox data-cursor="view" data-reveal>
+              <img src="assets/poster.jpg" width="900" height="1200" loading="lazy" alt="">
+              <span>সম্পূর্ণ পোস্টার দেখুন <svg aria-hidden="true"><use href="#i-arrow-ur"/></svg></span>
+            </button>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer" id="footer">
+    <div class="footer__marquee" aria-hidden="true">
+      <div class="footer__marquee-track">
+        <span>সকলের সাদর আমন্ত্রণ রইল</span><b>✦</b><span>সকলের সাদর আমন্ত্রণ রইল</span><b>✦</b>
+        <span>সকলের সাদর আমন্ত্রণ রইল</span><b>✦</b><span>সকলের সাদর আমন্ত্রণ রইল</span><b>✦</b>
+      </div>
+    </div>
+
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <svg class="footer__logo" aria-hidden="true"><use href="#logo"/></svg>
+        <p class="footer__brand-name">সৃজনী কলা অ্যাকাডেমী</p>
+        <p class="footer__brand-note">রজতজয়ন্তী বর্ষ উদযাপন · <span class="en">Silver Jubilee, 25 Years</span></p>
+        <div class="footer__social">
+          <a href="#" data-social="instagram" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
+          <a href="#" data-social="facebook" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a>
+          <a href="#" data-social="youtube" aria-label="YouTube"><svg><use href="#i-yt"/></svg></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>সৃজনী কলা অ্যাকাডেমী</h4>
+        <p>অধ্যক্ষ গোপাল সাহা</p>
+        <a href="tel:+919832355689">৯৮৩২৩ ৫৫৬৮৯</a>
+        <p class="is-placeholder">ঠিকানা / ইমেল — যুক্ত করুন</p>
+      </div>
+      <div class="footer__col">
+        <h4>কাব্যকথা</h4>
+        <p>অর্পিতা ভট্টাচার্য</p>
+        <a href="tel:+919775886233">৯৭৭৫৮ ৮৬২৩৩</a>
+      </div>
+      <div class="footer__col">
+        <h4>ঐকতান</h4>
+        <p>কৌশিক বন্দ্যোপাধ্যায়</p>
+        <a href="tel:+919475310876">৯৪৭৫৩ ১০৮৭৬</a>
+      </div>
+    </div>
+
+    <div class="footer__word" aria-hidden="true" data-split="chars">সৃজনী</div>
+
+    <div class="container footer__bottom">
+      <p>© <span id="year">২০২৬</span> সৃজনী কলা অ্যাকাডেমী। সর্বস্বত্ব সংরক্ষিত।</p>
+      <p class="en">Raiganj · Uttar Dinajpur · West Bengal</p>
+      <a href="#top" class="totop" aria-label="উপরে ফিরে যান"><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+  </footer>
+
+  <!-- ============ POSTER LIGHTBOX ============ -->
+  <dialog class="lightbox" id="lightbox" aria-label="অনুষ্ঠানের পোস্টার" data-lenis-prevent>
+    <button class="modal__close modal__close--light" type="button" data-close aria-label="বন্ধ করুন"><svg><use href="#i-close"/></svg></button>
+    <img src="assets/poster.jpg" width="900" height="1200" alt="সৃজনী কলা অ্যাকাডেমী, কাব্যকথা ও ঐকতান আয়োজিত কর্মশালা ও একক আবৃত্তিসন্ধ্যার পোস্টার">
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
