@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wdth,wght@75..125,300..800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@400..900&display=swap" rel="stylesheet">
 
-  <link rel="preload" as="image" href="assets/artist.jpg">
+  <link rel="preload" as="image" href="assets/22.jpg">
   <link rel="stylesheet" href="style.css">
 
   <!-- Animation libraries (deferred, executed in order) -->
@@ -45,9 +45,6 @@
       <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15M13.5 6l6 6-6 6"/></symbol>
       <symbol id="i-arrow-ur" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M8.5 7H17v8.5"/></symbol>
       <symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></symbol>
-      <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"/></g></symbol>
-      <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M13.4 21v-7.4h2.5l.4-2.9h-2.9V8.9c0-.8.2-1.4 1.4-1.4h1.6V4.9a21 21 0 0 0-2.3-.1c-2.3 0-3.8 1.4-3.8 3.9v2.1H7.7v2.9h2.6V21z"/></symbol>
-      <symbol id="i-yt" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="2.8" y="5.5" width="18.4" height="13" rx="4"/><path d="M10.2 9.3v5.4l4.6-2.7z" fill="currentColor"/></g></symbol>
       <symbol id="i-copy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="8.5" y="8.5" width="11" height="11" rx="2.5"/><path d="M15.5 8.5V6a1.5 1.5 0 0 0-1.5-1.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5"/></g></symbol>
       <path id="circlePath" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/>
     </defs>
@@ -73,9 +70,9 @@
   <!-- ============ NAVIGATION ============ -->
   <header class="nav" id="nav">
     <div class="nav__bar container">
-      <a href="#top" class="nav__brand" aria-label="সৃজনী কলা অ্যাকাডেমী — শুরুতে ফিরে যান">
+      <a href="#top" class="nav__brand" aria-label="সৃজনী কলা অ্যাকাডেমী · কাব্যকথা · ঐকতান — শুরুতে ফিরে যান">
         <svg class="nav__logo" aria-hidden="true"><use href="#logo"/></svg>
-        <span class="nav__brand-text"><b>সৃজনী</b><small>কলা অ্যাকাডেমী</small></span>
+        <span class="nav__brand-text"><b>সৃজনী কলা অ্যাকাডেমী</b><small>কাব্যকথা <i>·</i> ঐকতান</small></span>
       </a>
 
       <nav class="nav__links" aria-label="প্রধান নেভিগেশন">
@@ -88,11 +85,6 @@
       </nav>
 
       <div class="nav__right">
-        <div class="nav__social">
-          <a href="#" data-social="instagram" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
-          <a href="#" data-social="facebook" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a>
-          <a href="#" data-social="youtube" aria-label="YouTube"><svg><use href="#i-yt"/></svg></a>
-        </div>
         <a class="btn btn--outline btn--sm nav__cta" href="https://forms.gle/qnZxWaQXEPM2F6mN9" target="_blank" rel="noopener noreferrer" data-magnetic>নাম নথিভুক্ত করুন</a>
         <button class="nav__burger" id="burger" type="button" aria-label="মেনু খুলুন" aria-expanded="false" aria-controls="mobileMenu">
           <span></span><span></span>
@@ -114,11 +106,6 @@
     </nav>
     <div class="mmenu__foot container" style="--i:6">
       <a class="btn btn--gold" href="https://forms.gle/qnZxWaQXEPM2F6mN9" target="_blank" rel="noopener noreferrer" data-open-register>কর্মশালায় অংশগ্রহণ করুন</a>
-      <div class="mmenu__social">
-        <a href="#" data-social="instagram" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
-        <a href="#" data-social="facebook" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a>
-        <a href="#" data-social="youtube" aria-label="YouTube"><svg><use href="#i-yt"/></svg></a>
-      </div>
     </div>
   </div>
 
@@ -142,6 +129,7 @@
           <h1 class="hero__title" id="heroTitle">
             <span class="hero__title-line hero__title-line--light">সৃজনী কলা</span>
             <span class="hero__title-line hero__title-line--bold">অ্যাকাডেমী</span>
+            <span class="hero__title-line hero__title-line--partners"><i aria-hidden="true"></i>কাব্যকথা <em>ও</em> ঐকতান</span>
           </h1>
           <p class="hero__subtitle">রজতজয়ন্তী বর্ষ উদযাপন</p>
           <p class="hero__support">২৫ বছরের গৌরবময় পথচলা, সংস্কৃতি ও ভালোবাসার এক অনন্য উদযাপন।</p>
@@ -161,7 +149,7 @@
           <div class="hero__arch-line" aria-hidden="true"></div>
           <div class="hero__reveal">
             <div class="hero__frame">
-              <img src="assets/artist.jpg" width="378" height="520" alt="মঞ্চে মাইক্রোফোনের সামনে আবৃত্তিরত শ্রীমতী ব্রততী বন্দ্যোপাধ্যায়">
+              <img class="hero__photo" src="assets/22.jpg" width="600" height="900" alt="শ্রীমতী ব্রততী বন্দ্যোপাধ্যায়">
             </div>
           </div>
           <svg class="hero__badge" viewBox="0 0 200 200" aria-hidden="true">
@@ -205,14 +193,14 @@
     <div class="tapes" aria-hidden="true">
       <div class="tape tape--magenta">
         <div class="tape__track">
-          <span>আবৃত্তি</span><b>✦</b><span>কর্মশালা</span><b>✦</b><span>একক আবৃত্তিসন্ধ্যা</span><b>✦</b><span>রজতজয়ন্তী</span><b>✦</b><span>২৫ বছর</span><b>✦</b><span>রায়গঞ্জ</span><b>✦</b>
-          <span>আবৃত্তি</span><b>✦</b><span>কর্মশালা</span><b>✦</b><span>একক আবৃত্তিসন্ধ্যা</span><b>✦</b><span>রজতজয়ন্তী</span><b>✦</b><span>২৫ বছর</span><b>✦</b><span>রায়গঞ্জ</span><b>✦</b>
+          <span>আবৃত্তি</span><b>✦</b><span>কর্মশালা</span><b>✦</b><span>একক আবৃত্তিসন্ধ্যা</span><b>✦</b><span>রজতজয়ন্তী</span><b>✦</b><span>২৫ বছর</span><b>✦</b><span>শব্দ</span><b>✦</b><span>ছন্দ</span><b>✦</b><span>সুর</span><b>✦</b>
+          <span>আবৃত্তি</span><b>✦</b><span>কর্মশালা</span><b>✦</b><span>একক আবৃত্তিসন্ধ্যা</span><b>✦</b><span>রজতজয়ন্তী</span><b>✦</b><span>২৫ বছর</span><b>✦</b><span>শব্দ</span><b>✦</b><span>ছন্দ</span><b>✦</b><span>সুর</span><b>✦</b>
         </div>
       </div>
       <div class="tape tape--gold">
         <div class="tape__track tape__track--rev">
-          <span>সৃজনী কলা অ্যাকাডেমী</span><b>✦</b><span>কাব্যকথা</span><b>✦</b><span>ঐকতান</span><b>✦</b><span>শব্দব্রহ্মের সাধনা</span><b>✦</b>
-          <span>সৃজনী কলা অ্যাকাডেমী</span><b>✦</b><span>কাব্যকথা</span><b>✦</b><span>ঐকতান</span><b>✦</b><span>শব্দব্রহ্মের সাধনা</span><b>✦</b>
+          <span>সৃজনী কলা অ্যাকাডেমী</span><b>✦</b><span>কাব্যকথা</span><b>✦</b><span>ঐকতান</span><b>✦</b><span>শব্দব্রহ্মের সাধনা</span><b>✦</b><span>শ্রীমতী ব্রততী বন্দ্যোপাধ্যায়</span><b>✦</b><span>সকলের সাদর আমন্ত্রণ</span><b>✦</b>
+          <span>সৃজনী কলা অ্যাকাডেমী</span><b>✦</b><span>কাব্যকথা</span><b>✦</b><span>ঐকতান</span><b>✦</b><span>শব্দব্রহ্মের সাধনা</span><b>✦</b><span>শ্রীমতী ব্রততী বন্দ্যোপাধ্যায়</span><b>✦</b><span>সকলের সাদর আমন্ত্রণ</span><b>✦</b>
         </div>
       </div>
     </div>
@@ -246,9 +234,15 @@
             <span class="jubilee__poster-tag">পোস্টার দেখুন <svg aria-hidden="true"><use href="#i-arrow-ur"/></svg></span>
           </button>
           <div class="jubilee__circle" aria-hidden="true">
-            <img src="assets/artist.jpg" loading="lazy" alt="">
+            <img class="jubilee__photo" src="assets/gallery-7.jpg" width="800" height="600" loading="lazy" alt="">
           </div>
-          <span class="jubilee__stamp en" aria-hidden="true">Silver<br>Jubilee</span>
+          <span class="jubilee__stamp">
+            <svg class="jubilee__stamp-ring" viewBox="0 0 200 200" aria-hidden="true">
+              <text class="jubilee__stamp-text"><textPath href="#circlePath" textLength="482" lengthAdjust="spacing">SILVER JUBILEE ✦ TWENTY-FIVE YEARS ✦ </textPath></text>
+            </svg>
+            <img src="assets/logo1.jpg" width="1280" height="1009" loading="lazy" alt="সৃজনী কলা অ্যাকাডেমী — ২৫ বছর">
+            <span class="jubilee__stamp-label">রজতজয়ন্তী</span>
+          </span>
         </div>
       </div>
 
@@ -256,6 +250,34 @@
       <div class="container timeline" aria-hidden="true">
         <div class="timeline__labels"><span>০১</span><span class="en">a journey of twenty-five years</span><span>২৫</span></div>
         <div class="timeline__track">
+          <!-- Art & culture journey: paint → canvas → tabla → rhythm → mic → stage -->
+          <div class="timeline__arts">
+            <!-- রং-তুলি: paint palette & brush -->
+            <span class="timeline__art" data-at="0" style="--x:0%">
+              <svg viewBox="0 0 48 48"><path pathLength="1" d="M23 7C12 7 4 14 4 23c0 7 5 12 11 12 3 0 4-2 4-4s1-4 4-4h5c7 0 12-4 12-10C40 11 33 7 23 7z"/><circle class="fl" cx="13" cy="19" r="2.6"/><circle class="fl gd" cx="20" cy="13" r="2.6"/><circle class="fl in" cx="29" cy="13" r="2.6"/><circle class="fl" cx="34" cy="20" r="2.6"/><path class="ac" pathLength="1" d="M46 24L33 40"/><path class="fl gd" d="M33 40c-2-1-5 0-6 3-1 2-2 3-4 3 4 1 8 0 10-2 1-1 1-3 0-4z"/></svg>
+            </span>
+            <!-- ক্যানভাস: easel with a painting -->
+            <span class="timeline__art" data-at=".1667" style="--x:16.667%">
+              <svg viewBox="0 0 48 48"><rect pathLength="1" x="9" y="5" width="30" height="23" rx="1.5"/><path class="ac" pathLength="1" d="M13 23c4-7 8-7 11-3s6 4 11-5"/><circle class="fl gd" cx="31" cy="11" r="2.6"/><path pathLength="1" d="M16 28l-5 17M32 28l5 17M24 28v12"/><path pathLength="1" d="M7 28h34"/></svg>
+            </span>
+            <!-- তবলা জোড়া: dayan & bayan -->
+            <span class="timeline__art" data-at=".375" style="--x:37.5%">
+              <svg viewBox="0 0 48 48"><ellipse pathLength="1" cx="13" cy="21" rx="8" ry="3"/><path pathLength="1" d="M5 21l2 19h12l2-19"/><path pathLength="1" d="M8 27l10 8M18 27L8 35"/><ellipse class="fl" cx="13" cy="21" rx="3" ry="1.1"/><ellipse pathLength="1" cx="34" cy="27" rx="10" ry="3.4"/><path pathLength="1" d="M24 27c0 9 4 14 10 14s10-5 10-14"/><ellipse class="fl" cx="34" cy="27" rx="3.6" ry="1.2"/></svg>
+            </span>
+            <!-- তবলা ও সুর: tabla with rhythm notes -->
+            <span class="timeline__art" data-at=".5833" style="--x:58.333%">
+              <svg viewBox="0 0 48 48"><ellipse pathLength="1" cx="17" cy="20" rx="11" ry="3.8"/><path pathLength="1" d="M6 20l3 24h16l3-24"/><path pathLength="1" d="M10 27l14 11M24 27L10 38"/><ellipse class="fl" cx="17" cy="20" rx="4.2" ry="1.4"/><path class="ac" pathLength="1" d="M37 4v13M37 4l7 2v11"/><circle class="fl" cx="35" cy="17" r="2.3"/><circle class="fl" cx="42" cy="17" r="2.3"/></svg>
+            </span>
+            <!-- মাইক: microphone -->
+            <span class="timeline__art" data-at=".7917" style="--x:79.167%">
+              <svg viewBox="0 0 48 48"><rect pathLength="1" x="17" y="4" width="14" height="22" rx="7"/><path pathLength="1" d="M17 11h14M17 16h14M17 21h14"/><path class="ac" pathLength="1" d="M12 19c0 8 5 13 12 13s12-5 12-13"/><path pathLength="1" d="M24 32v9M16 44h16"/></svg>
+            </span>
+            <!-- মঞ্চের মাইক: stage mic on a stand, voice carrying out -->
+            <span class="timeline__art" data-at="1" style="--x:100%">
+              <svg viewBox="0 0 48 48"><circle pathLength="1" cx="16" cy="13" r="8"/><path pathLength="1" d="M10 10h12M9 14h14M10 18h12"/><path pathLength="1" d="M21 19l9 17M30 36l-6 9M30 36l7 9M30 36v9"/><path class="ac" pathLength="1" d="M28 6c3 3 3 10 0 13M33 3c5 5 5 14 0 19"/></svg>
+            </span>
+          </div>
+          <span class="timeline__runner"><svg viewBox="0 0 24 24"><path d="M12 1.5l2.4 7.1 7.1 2.4-7.1 2.4-2.4 7.1-2.4-7.1-7.1-2.4 7.1-2.4z"/></svg></span>
           <div class="timeline__line"><span></span></div>
           <div class="timeline__ticks" id="timelineTicks"></div>
         </div>
@@ -269,7 +291,7 @@
         <figure class="artist__portrait" data-cursor="view">
           <div class="artist__mask">
             <div class="artist__mask-inner">
-              <img src="assets/artist.jpg" width="378" height="520" loading="lazy" alt="শ্রীমতী ব্রততী বন্দ্যোপাধ্যায়, মঞ্চে আবৃত্তিরত">
+              <img class="artist__photo" src="assets/gallery-6.png" width="800" height="600" loading="lazy" alt="শ্রীমতী ব্রততী বন্দ্যোপাধ্যায়, মঞ্চে আবৃত্তিরত">
             </div>
           </div>
           <figcaption class="artist__vert en">The Voice of Bengali Recitation</figcaption>
@@ -376,9 +398,11 @@
         </header>
 
         <div class="collab__grid">
-          <!-- Replace each .org__logo monogram with an <img> of the organisation's logo when available -->
+          <!-- LOGOS: to add a logo, put an <img> inside .org__logo, e.g.
+               <div class="org__logo has-img"><img src="assets/logo-srijani.png" alt="সৃজনী কলা অ্যাকাডেমী লোগো"></div>
+               The .has-img class switches the circle to a white background so the logo shows cleanly. -->
           <article class="org org--host">
-            <div class="org__logo" data-logo-placeholder><span>স</span></div>
+            <div class="org__logo has-img has-img--fill"><img src="assets/logo0.jpg" width="533" height="533" loading="lazy" alt="সৃজনী কলা অ্যাকাডেমী লোগো"></div>
             <p class="org__role"><span class="en">Host</span> · আয়োজক</p>
             <h3 class="org__name">সৃজনী কলা অ্যাকাডেমী</h3>
             <p class="org__badge en">25 Years of Anniversary</p>
@@ -400,7 +424,7 @@
           </article>
 
           <article class="org">
-            <div class="org__logo" data-logo-placeholder><span>ঐ</span></div>
+            <div class="org__logo has-img has-img--fill has-img--zoom"><img src="assets/oikotaan.jpeg" width="1254" height="1254" loading="lazy" alt="ঐকতান লোগো"></div>
             <p class="org__role"><span class="en">In collaboration</span> · সহযোগী সংস্থা</p>
             <h3 class="org__name">ঐকতান</h3>
             <p class="org__badge en">Oikotan</p>
@@ -458,7 +482,7 @@
                 <div class="row"><dt>সময়</dt><dd>সন্ধ্যা ৬টা</dd></div>
                 <div class="row"><dt>স্থান</dt><dd>বিধানমঞ্চ, রায়গঞ্জ, উত্তর দিনাজপুর</dd></div>
                 <div class="row"><dt>প্রবেশমূল্য</dt><dd>৭০০/-, ৫০০/-, ৪০০/-, ৩০০/-, ২০০/-</dd></div>
-                <div class="row"><dt>টিকিট</dt><dd class="is-placeholder">টিকিট প্রাপ্তিস্থান — শীঘ্রই জানানো হবে</dd></div>
+               
               </dl>
             </article>
 
@@ -532,17 +556,12 @@
         <svg class="footer__logo" aria-hidden="true"><use href="#logo"/></svg>
         <p class="footer__brand-name">সৃজনী কলা অ্যাকাডেমী</p>
         <p class="footer__brand-note">রজতজয়ন্তী বর্ষ উদযাপন · <span class="en">Silver Jubilee, 25 Years</span></p>
-        <div class="footer__social">
-          <a href="#" data-social="instagram" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
-          <a href="#" data-social="facebook" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a>
-          <a href="#" data-social="youtube" aria-label="YouTube"><svg><use href="#i-yt"/></svg></a>
-        </div>
       </div>
       <div class="footer__col">
         <h4>সৃজনী কলা অ্যাকাডেমী</h4>
         <p>অধ্যক্ষ গোপাল সাহা</p>
         <a href="tel:+919832355689">৯৮৩২৩ ৫৫৬৮৯</a>
-        <p class="is-placeholder">ঠিকানা / ইমেল — যুক্ত করুন</p>
+        <!-- <p class="is-placeholder">ঠিকানা / ইমেল — যুক্ত করুন</p> -->
       </div>
       <div class="footer__col">
         <h4>কাব্যকথা</h4>
@@ -556,10 +575,15 @@
       </div>
     </div>
 
-    <div class="footer__word" aria-hidden="true" data-split="chars">সৃজনী</div>
+    <div class="footer__marquee footer__marquee--names" aria-hidden="true">
+      <div class="footer__marquee-track">
+        <span>সৃজনী কলা অ্যাকাডেমী</span><b>✦</b><span>কাব্যকথা</span><b>✦</b><span>ঐকতান</span><b>✦</b>
+        <span>সৃজনী কলা অ্যাকাডেমী</span><b>✦</b><span>কাব্যকথা</span><b>✦</b><span>ঐকতান</span><b>✦</b>
+      </div>
+    </div>
 
     <div class="container footer__bottom">
-      <p>© <span id="year">২০২৬</span> সৃজনী কলা অ্যাকাডেমী। সর্বস্বত্ব সংরক্ষিত।</p>
+      <p>© <span id="year">২০২৬</span> সৃজনী কলা অ্যাকাডেমী · কাব্যকথা · ঐকতান। সর্বস্বত্ব সংরক্ষিত।</p>
       <p class="en">Raiganj · Uttar Dinajpur · West Bengal</p>
       <a href="#top" class="totop" aria-label="উপরে ফিরে যান"><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
     </div>
@@ -571,6 +595,5 @@
     <img src="assets/poster.jpg" width="900" height="1200" alt="সৃজনী কলা অ্যাকাডেমী, কাব্যকথা ও ঐকতান আয়োজিত কর্মশালা ও একক আবৃত্তিসন্ধ্যার পোস্টার">
   </dialog>
 
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>

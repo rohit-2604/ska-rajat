@@ -13,12 +13,6 @@
   const CONFIG = {
     // Evening recital start (IST) — drives the countdown
     eventStart: new Date('2026-12-26T18:00:00+05:30'),
-    socialLinks: {
-      // Paste real profile URLs here; empty values show a "coming soon" toast.
-      instagram: '',
-      facebook: '',
-      youtube: '',
-    },
   };
 
   /* ---------- Environment ---------- */
@@ -283,10 +277,26 @@
         scrollTrigger: { trigger: '.jubilee__media', start: 'top bottom', end: 'bottom top', scrub: true },
       });
     });
-    gsap.fromTo('.timeline__line span', { scaleX: 0 }, {
-      scaleX: 1, ease: 'none',
-      scrollTrigger: { trigger: '.timeline', start: 'top 92%', end: 'top 45%', scrub: true },
-    });
+    /* Art & culture journey: a star runs along the line, drawing it,
+       and each illustration draws itself in as the star reaches it */
+    const timeline = $('.timeline');
+    if (timeline) {
+      const fill = $('.timeline__line span', timeline);
+      const runner = $('.timeline__runner', timeline);
+      const arts = $$('.timeline__art', timeline);
+      const journey = { p: 0 };
+      const render = () => {
+        fill.style.transform = `scaleX(${journey.p})`;
+        runner.style.left = `${journey.p * 100}%`;
+        arts.forEach((a) => a.classList.toggle('is-on', journey.p >= Number(a.dataset.at) - 0.002));
+      };
+      timeline.classList.add('is-anim');
+      render();
+      gsap.to(journey, {
+        p: 1, ease: 'none', onUpdate: render,
+        scrollTrigger: { trigger: timeline, start: 'top 88%', end: 'top 30%', scrub: 0.8 },
+      });
+    }
     gsap.from('.timeline__ticks i', {
       scaleY: 0, transformOrigin: 'top', duration: 0.6, ease: 'expo.out', stagger: 0.03,
       scrollTrigger: { trigger: '.timeline', start: 'top 85%' },
@@ -410,14 +420,13 @@
     });
 
     /* --- Footer closing animation --- */
-    const footerChars = splitText($('.footer__word'), 'chars');
     const footTl = gsap.timeline({ scrollTrigger: { trigger: '.footer__grid', start: 'top 80%' } });
     footTl
       .from('.footer__logo', { rotate: -180, scale: 0, duration: 1.6, ease: 'expo.out' })
       .from('.footer__brand > *:not(.footer__logo), .footer__col', { y: 40, opacity: 0, duration: 1.1, ease: 'expo.out', stagger: 0.08 }, 0.15);
-    gsap.from(footerChars, {
-      yPercent: 70, opacity: 0, rotate: 8, duration: 1.6, ease: 'expo.out', stagger: 0.08,
-      scrollTrigger: { trigger: '.footer__word', start: 'top 95%' },
+    gsap.from('.footer__marquee--names', {
+      y: 60, opacity: 0, duration: 1.6, ease: 'expo.out',
+      scrollTrigger: { trigger: '.footer__marquee--names', start: 'top 98%' },
     });
     gsap.from('.footer__bottom', {
       opacity: 0, y: 20, duration: 1,
@@ -451,6 +460,40 @@
         frag.appendChild(p);
       }
       wrap.appendChild(frag);
+    });
+  }
+
+  /** Marquee strips: repeat the text until one loop is wider than the strip,
+   *  so no blank gap ever shows, and keep a steady speed whatever the length. */
+  function initMarquees() {
+    const SPEED = 34;      // px per second (same pace as before)
+    const SLOW_SPEED = 18; // used when reduced motion is on
+    const tracks = $$('.tape__track, .footer__marquee-track');
+    tracks.forEach((t) => {
+      const kids = Array.from(t.children);
+      t._unit = kids.slice(0, kids.length / 2).map((n) => n.cloneNode(true)); // the markup holds 2 copies
+    });
+
+    const fill = () => tracks.forEach((t) => {
+      const need = t.parentElement.getBoundingClientRect().width;
+      t.replaceChildren();
+      do { t._unit.forEach((n) => t.appendChild(n.cloneNode(true))); }
+      while (t.scrollWidth < need && t.childElementCount < 400);
+      const half = t.scrollWidth;                               // one full loop
+      Array.from(t.children).forEach((n) => t.appendChild(n.cloneNode(true))); // second identical half
+      t.style.setProperty('--mq-dur', `${(half / SPEED).toFixed(1)}s`);
+      t.style.setProperty('--mq-dur-slow', `${(half / SLOW_SPEED).toFixed(1)}s`);
+    });
+
+    fill();
+    if (document.fonts) document.fonts.ready.then(fill); // widths change once Bengali fonts load
+    let lastW = window.innerWidth;
+    let timer;
+    window.addEventListener('resize', () => {
+      if (window.innerWidth === lastW) return; // ignore mobile address-bar height changes
+      lastW = window.innerWidth;
+      clearTimeout(timer);
+      timer = setTimeout(fill, 200);
     });
   }
 
@@ -529,7 +572,7 @@
       const a = e.target.closest('a[href^="#"]');
       if (!a) return;
       const href = a.getAttribute('href');
-      if (href === '#' || a.hasAttribute('data-social') || a.classList.contains('skip-link')) return;
+      if (href === '#' || a.classList.contains('skip-link')) return;
       const target = href === '#top' ? document.body : $(href);
       if (!target) return;
       e.preventDefault();
@@ -637,7 +680,7 @@
   }
 
   /* ======================================================================
-     MISC: countdown · social links · toast
+     MISC: countdown
      ====================================================================== */
   function initCountdown() {
     const box = $('#countdown');
@@ -661,36 +704,12 @@
     tick();
   }
 
-  function initSocial() {
-    $$('[data-social]').forEach((a) => {
-      const url = CONFIG.socialLinks[a.dataset.social];
-      if (url) {
-        a.href = url;
-        a.target = '_blank';
-        a.rel = 'noopener noreferrer';
-      } else {
-        a.addEventListener('click', (e) => {
-          e.preventDefault();
-          toast('সোশ্যাল মিডিয়া লিঙ্ক শীঘ্রই যুক্ত হবে।');
-        });
-      }
-    });
-  }
-
-  let toastTimer;
-  function toast(text) {
-    const t = $('#toast');
-    t.textContent = text;
-    t.classList.add('is-visible');
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => t.classList.remove('is-visible'), 3200);
-  }
-
   /* ======================================================================
      BOOT
      ====================================================================== */
   function boot() {
     initTimelineTicks();
+    initMarquees();
     initParticles();
     initSmoothScroll();
     initNav();
@@ -701,7 +720,6 @@
     initTilt();
     initDialogs();
     initCountdown();
-    initSocial();
 
     const heroTl = buildHeroIntro();
     initScrollAnimations();
