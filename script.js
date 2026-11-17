@@ -23,6 +23,7 @@
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const lite = root.classList.contains('perf-lite'); // low-RAM / slow device (set in <head>)
   const hasGSAP = typeof window.gsap !== 'undefined';
   const hasST = hasGSAP && typeof window.ScrollTrigger !== 'undefined';
   const animate = hasST && !reduceMotion;
@@ -98,7 +99,8 @@
      SMOOTH SCROLL (Lenis ⇄ ScrollTrigger)
      ====================================================================== */
   function initSmoothScroll() {
-    if (reduceMotion || typeof window.Lenis === 'undefined') return;
+    // Native scrolling is cheaper and more responsive on low-end devices
+    if (reduceMotion || lite || typeof window.Lenis === 'undefined') return;
     lenis = new Lenis({ lerp: 0.09, smoothWheel: true, wheelMultiplier: 1 });
     root.style.scrollBehavior = 'auto';
     if (hasST) {
@@ -423,14 +425,13 @@
     const footTl = gsap.timeline({ scrollTrigger: { trigger: '.footer__grid', start: 'top 80%' } });
     footTl
       .from('.footer__logo', { rotate: -180, scale: 0, duration: 1.6, ease: 'expo.out' })
-      .from('.footer__brand > *:not(.footer__logo), .footer__col', { y: 40, opacity: 0, duration: 1.1, ease: 'expo.out', stagger: 0.08 }, 0.15);
+      .from('.footer__brand > *:not(.footer__logo), .footer__col', { y: 40, opacity: 0, duration: 1.1, ease: 'expo.out', stagger: 0.08 }, 0.15)
+      // the bottom line sits at the very end of the page, where its own trigger
+      // could fall past the max scroll on slow devices — ride this timeline instead
+      .from('.footer__bottom', { opacity: 0, y: 20, duration: 1 }, 0.5);
     gsap.from('.footer__marquee--names', {
       y: 60, opacity: 0, duration: 1.6, ease: 'expo.out',
       scrollTrigger: { trigger: '.footer__marquee--names', start: 'top 98%' },
-    });
-    gsap.from('.footer__bottom', {
-      opacity: 0, y: 20, duration: 1,
-      scrollTrigger: { trigger: '.footer__bottom', start: 'top 100%' },
     });
   }
 
@@ -442,7 +443,7 @@
     const colors = ['#ffd93b', '#ff5aa8', '#ffffff', '#f5a623'];
     const isSmall = window.innerWidth < 760;
     $$('[data-particles]').forEach((wrap) => {
-      const n = Math.round(Number(wrap.dataset.particles) * (isSmall ? 0.5 : 1));
+      const n = Math.round(Number(wrap.dataset.particles) * (isSmall ? 0.5 : 1) * (lite ? 0.4 : 1));
       const frag = document.createDocumentFragment();
       for (let i = 0; i < n; i++) {
         const p = document.createElement('span');
@@ -495,6 +496,16 @@
       clearTimeout(timer);
       timer = setTimeout(fill, 200);
     });
+  }
+
+  /** Pause the CSS loops (particles, glows, marquees, gradients) of any
+   *  section that is off screen, so the device only animates what is visible. */
+  function initOffscreenPause() {
+    if (!('IntersectionObserver' in window)) return;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => e.target.classList.toggle('is-offscreen', !e.isIntersecting));
+    }, { rootMargin: '150px 0px' });
+    $$('main > section, main > .tapes, .footer').forEach((s) => io.observe(s));
   }
 
   function initTimelineTicks() {
@@ -711,6 +722,7 @@
     initTimelineTicks();
     initMarquees();
     initParticles();
+    initOffscreenPause();
     initSmoothScroll();
     initNav();
     initMobileMenu();

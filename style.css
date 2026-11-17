@@ -1346,6 +1346,30 @@ html:not(.js) .loader { display: none; }
   .footer__marquee-track { animation-duration: var(--mq-dur-slow, 70s) !important; animation-iteration-count: infinite !important; }
 }
 
+/* ---------- 20. Performance ---------- */
+/* Looping effects pause while their section is off screen (class set by script.js) */
+.is-offscreen, .is-offscreen::before, .is-offscreen::after,
+.is-offscreen *, .is-offscreen *::before, .is-offscreen *::after { animation-play-state: paused !important; }
+
+/* Lite mode (low-RAM / slow devices — detected in <head>): same look, but the
+   effects that repaint every frame or hold large GPU layers are made static */
+.perf-lite body::after { display: none; }
+.perf-lite .glow-border::before,
+.perf-lite .ws-card::before,
+.perf-lite .evening::before,
+.perf-lite .reg::before { animation: none; --angle: 140deg; }
+.perf-lite .hero__glow { animation: none; will-change: auto; }
+.perf-lite .hero__spot,
+.perf-lite .hero__subtitle,
+.perf-lite .jubilee__count,
+.perf-lite .invite { animation: none; }
+.perf-lite .particle { box-shadow: none; }
+.perf-lite .nav.is-scrolled .nav__bar { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgba(12, 9, 34, .94); }
+.perf-lite .hero__tag { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgba(12, 9, 34, .92); }
+.perf-lite .hero__dock,
+.perf-lite .evening { -webkit-backdrop-filter: none; backdrop-filter: none; }
+.perf-lite .ws-card { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgba(12, 9, 34, .82); }
+
 /* Pause the moving strips while hovered (lets people read them) */
 .tapes:hover .tape__track,
 .footer__marquee:hover .footer__marquee-track { animation-play-state: paused; }

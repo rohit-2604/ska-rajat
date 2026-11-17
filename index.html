@@ -18,6 +18,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wdth,wght@75..125,300..800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@400..900&display=swap" rel="stylesheet">
 
   <link rel="preload" as="image" href="assets/22.jpg">
+
+  <!-- Lite mode: low-RAM / low-core devices and slow or data-saver connections keep the
+       same design and entrance animations, but skip the costly always-running effects.
+       Force it for testing with ?lite, or turn it off with ?full. -->
+  <script>
+    (function () {
+      var n = navigator, c = n.connection || {}, q = location.search;
+      var lite = /[?&]lite\b/.test(q) || (!/[?&]full\b/.test(q) && (
+        (n.deviceMemory && n.deviceMemory <= 4) ||
+        (n.hardwareConcurrency && n.hardwareConcurrency <= 2) ||
+        c.saveData || /^(slow-2g|2g|3g)$/.test(c.effectiveType || '')));
+      if (lite) document.documentElement.classList.add('perf-lite');
+    })();
+  </script>
   <link rel="stylesheet" href="style.css">
 
   <!-- Animation libraries (deferred, executed in order) -->
@@ -291,7 +305,7 @@
         <figure class="artist__portrait" data-cursor="view">
           <div class="artist__mask">
             <div class="artist__mask-inner">
-              <img class="artist__photo" src="assets/gallery-6.png" width="800" height="600" loading="lazy" alt="শ্রীমতী ব্রততী বন্দ্যোপাধ্যায়, মঞ্চে আবৃত্তিরত">
+              <img class="artist__photo" src="assets/gallery-6.jpg" width="1200" height="896" loading="lazy" alt="শ্রীমতী ব্রততী বন্দ্যোপাধ্যায়, মঞ্চে আবৃত্তিরত">
             </div>
           </div>
           <figcaption class="artist__vert en">The Voice of Bengali Recitation</figcaption>
